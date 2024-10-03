@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.name = "";
+        });
+    </script>
+    <div id="root"></div>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <header class="navbar navbar-inverse">
+        <div class="container">
+            <h1 class="text-center text-white">Welcome to Our Music Library</h1>
+            <nav class="nav nav-pills nav-justified">
+                <li><a href="file:///C:/Users/Admin/Desktop/SEWAPROJECT/Main.html">Main Page</a></li>
+                <li><a href="file:///C:/Users/Admin/Desktop/SEWAPROJECT/Main.html">Go to Main Page</a></li>
+                <li><a href="file:///C:/Users/Admin/Desktop/SEWAPROJECT/Main.html">Go to Main Page</a></li>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="text-center">Welcome to the World of Music</h2>
+                <section class="aryan text-center">
+                    <p>Place a song</p>
+                    <input type="text" ng-model="name" placeholder="Enter a song">
+                    <p class="song-output" ng-bind="name"></p>
+                </section>
+            </div>
+        </div>
+
+        <div id="demo" class="text-center">
+            <h3>The XMLHttpRequest Object</h3>
+            <button type="button" class="btn btn-primary" onclick="loadDoc()">Change Content</button>
+        </div>
+
+        <script>
+            function loadDoc() {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+                xhttp.open("GET","ajax_info.txt");
+                xhttp.send();
+            }
+        </script>
+
+        <section class="text-center">
+            <h3>Enjoy Our Music Collection</h3>
+            <img src="music.png" class="img-responsive center-block" alt="Music" width="500" height="300">
+        </section>
+
+        <iframe src="https://wynk.in/music" class="iframe-music" title="Music Player"></iframe>
+
+        <section class="text-center">
+            <progress value="0" max="100" class="progress-bar"></progress>
+        </section>
+    </main>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <h4>Developed and Created By:</h4>
+            <p>Aryan, Avanish, Jude, Jasper</p>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
